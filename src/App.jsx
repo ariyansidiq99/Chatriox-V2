@@ -2,7 +2,6 @@ import { lazy, Suspense } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Layout          from './components/Layout';
 import ProtectedRoute  from './components/ProtectedRoute';
-import ErrorBoundary   from './components/ErrorBoundary';
 
 const Home           = lazy(() => import('./pages/Home'));
 const Features       = lazy(() => import('./pages/Features'));
@@ -30,9 +29,7 @@ function App() {
           <Route path='pricing'  element={<Pricing />} />
           <Route path='login'    element={<Login />} />
           <Route element={<ProtectedRoute />}>
-            <Route path='campaigns' element={
-              <ErrorBoundary><Campaigns /></ErrorBoundary>
-            } />
+            <Route path='campaigns' />
             <Route path='campaigns/:id' element={
               <ErrorBoundary><CampaignDetail /></ErrorBoundary>
             } />
