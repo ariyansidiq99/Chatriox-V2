@@ -1,5 +1,5 @@
 import useFetch    from '../hooks/useFetch';
-import useToggle   from '../hooks/useToggle';
+import {useToggle}   from '../hooks/useToggle';
 import useDebounce from '../hooks/useDebounce';
 
 function Campaigns() {
